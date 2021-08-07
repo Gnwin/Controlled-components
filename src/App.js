@@ -10,15 +10,16 @@ class App extends Component {
     }
   }
   
-  updateState = (query) => {(
+  updateState = (content) => {(
     this.setState(()=>({
-      query: query
+      query: content
     }))
   )}
   
   render() {
     
     const { query } = this.state;
+    console.log(query);
     
     return (
       <div className="App">
@@ -28,7 +29,7 @@ class App extends Component {
         </header>
         <div className="container">
           <input type="text" placeholder="Say Something" value={query} onChange={(event)=> this.updateState(event.target.value)} />
-          <p className="echo">Echo:{}</p>
+          <p className="echo">Echo:{query}</p>
           <p>This should mirror the text you typed into the input field.</p>
         </div>
       </div>
